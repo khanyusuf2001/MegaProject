@@ -56,8 +56,9 @@ export class AuthService{
     
     }
 
-const authSerive = new AuthService();
+const authService = new AuthService();
 
 
-export default AuthService;
+export default authService;
+export { authService} from  './appwrite/auth'
 
