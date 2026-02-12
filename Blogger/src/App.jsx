@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { authService} from  './appwrite/auth'
+import authService from  './appwrite/auth'
 import {logIn, logOut} from './store/authSlice'
 import './App.css'
+import { Footer, Header } from './components'
+
 
 function App() {
 
@@ -24,7 +26,15 @@ function App() {
   },[]);
   
   return !loading ? (
-    <div className='min-h-screen flex items-center justify-center'>Loading....</div>
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400 '>
+      <div className='w-full block'>
+       <Header/>
+          <main>
+            {/* <Outlet /> */}
+          </main>
+       <Footer/>
+      </div>
+    </div>
   ) : null;
 }
 
